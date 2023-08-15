@@ -3,9 +3,11 @@ import { React, useState, useEffect } from 'react'
 import { FaFacebookF, FaRegEnvelope, FaLinkedinIn, FaGoogle } from 'react-icons/fa';
 import { MdLockOutline } from 'react-icons/md';
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
 import { usePathname } from 'next/navigation';
 export default function registration() {
+    const router = useRouter();
     const usepath = usePathname();
     console.log(usepath);
     // {
@@ -55,6 +57,7 @@ export default function registration() {
             if (res.ok) {
                 const form = e.target;
                 form.reset();
+                router.push('/login');
 
             }
             else {
@@ -77,7 +80,7 @@ export default function registration() {
                 <div className="bg-white rounded-2xl shadow-2xl flex  w-full max-w-4xl">
                     <div className="w-full p-5">
                         <div className="text-left font-bold">
-                            <span className="text-blue-500">Company</span>Name
+                            <span className="text-blue-500">Profile</span>Sphere
                             {/* You can add your sign-in form or content here */}
                         </div>
                         <div className="py-10 px-10 w-full flex flex-col items-center justify-center ">

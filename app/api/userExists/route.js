@@ -8,7 +8,7 @@ export async function POST(req){
         const {email} =await req.json();
         const user=await User.findOne({email}).select("_id");
         console.log(user);
-        console.log("hello")
+       
         return NextResponse.json({user});
 
 

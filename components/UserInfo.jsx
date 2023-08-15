@@ -1,3 +1,6 @@
+'use client'
+import { signOut } from "next-auth/react";
+
 export default function UserInfo() {
     return (
         <>
@@ -9,7 +12,7 @@ export default function UserInfo() {
                     <div>Email:
                         <span className="font-bold">johnn@gmail.com</span>
                     </div>
-                    <button className="bg-red-500 text-white font-bold px-6 py-2 mt-3">Log Out</button>
+                    <button className="bg-red-500 text-white font-bold px-6 py-2 mt-3" onClick={() => signOut()}>Log Out</button>
                 </div>
             </div>
         </>
